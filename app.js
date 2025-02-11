@@ -12,7 +12,7 @@ app.use(morgan("dev"));
 
 const PORT = process.env.PORT || 3000;
 
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
