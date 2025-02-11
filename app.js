@@ -19,6 +19,8 @@ app.get("/", (req, res) => {
 app.get("/api/v1/get-address", async (req, res) => {
   const { lat, lng } = req.query;
   const apiKey = process.env.GOOGLE_API_KEY;
+  console.log(apiKey);
+  console.log(lat, lng);
 
   if (!lat || !lng) {
     return res
