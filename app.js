@@ -11,6 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
 const PORT = process.env.PORT || 3000;
+const apiKey = process.env.GOOGLE_API_KEY;
 
 app.get("/", (req, res) => {
   res.send("Hello World");
@@ -18,7 +19,6 @@ app.get("/", (req, res) => {
 
 app.get("/api/v1/get-address", async (req, res) => {
   const { lat, lng } = req.query;
-  const apiKey = process.env.GOOGLE_API_KEY;
   console.log(apiKey);
   console.log(lat, lng);
 
